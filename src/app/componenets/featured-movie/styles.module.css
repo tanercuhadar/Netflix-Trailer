@@ -1,0 +1,157 @@
+.movieWrapper {
+    position: relative;
+    width: 100vw;
+    height: 140vh;
+    /* Yüksekliği artırdım */
+    overflow: hidden;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    margin-top: -80px;
+}
+
+/* Film detay sayfası için daha büyük görsel */
+.movieWrapper:not(.compact) {
+    height: 100vh;
+    margin-top: -30px;
+    /* Üst boşluğu kapatmak için negatif margin */
+    position: relative;
+    top: 0;
+}
+
+.moviePoster {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+}
+
+.movieTitle {
+    font-size: 72px;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: 900;
+    line-height: 72px;
+    max-width: 25ch;
+    position: absolute;
+    top: 200px;
+    left: 60px;
+    z-index: 10;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.overview {
+    font-size: 24px;
+    max-width: 50ch;
+    position: absolute;
+    top: 380px;
+    left: 60px;
+    z-index: 10;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.shortOverview {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* isCompact=false durumunda overview için özel stil */
+.overview:not(.shortOverview) {
+    max-width: 60ch;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.actionButtons {
+    display: flex;
+    gap: 12px;
+    position: absolute;
+    top: 480px;
+    left: 60px;
+    z-index: 10;
+}
+
+/* isCompact=false durumunda butonlar için özel pozisyon */
+.movieWrapper:not(.compact) .actionButtons {
+    top: 600px;
+    /* Açıklamanın altında */
+    left: 60px;
+}
+
+/* Film detay sayfasında başlık pozisyonu */
+.movieWrapper:not(.compact) .movieTitle {
+    top: 120px;
+    /* Üst boşluğu azaltmak için */
+}
+
+.addButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #eee;
+    border-radius: 999px;
+    width: 62px;
+    height: 62px;
+    color: #eee;
+    font-size: 24px;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.addButton:hover {
+    background-color: #eee;
+    color: #222;
+}
+
+.playButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eee;
+    color: #222;
+    width: 300px;
+    border-radius: 9999px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.playButton:hover {
+    background-color: #ddd;
+    transform: scale(1.05);
+}
+
+.moviePosterOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.8) 0%,
+            rgba(0, 0, 0, 0.4) 40%,
+            rgba(0, 0, 0, 0.2) 60%,
+            rgba(0, 0, 0, 0.1) 80%,
+            rgba(0, 0, 0, 0) 100%);
+    z-index: -1;
+}
+
+.moviePoster img {
+    width: 100% !important;
+    height: 100% !important;
+    z-index: -2;
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* Film detay sayfası için daha iyi görsel pozisyonu */
+.movieWrapper:not(.compact) .moviePoster img {
+    object-position: center center;
+}

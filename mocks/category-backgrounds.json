@@ -1,0 +1,81 @@
+{
+    "categoryBackgrounds": {
+        "28": {
+            "id": 28,
+            "name": "Action",
+            "backdrop_path": "/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg",
+            "title": "Black Adam",
+            "overview": "Nearly 5,000 years after he was bestowed with the almighty powers of the Egyptian gods—and imprisoned just as quickly—Black Adam is freed from his earthly tomb, ready to unleash his unique form of justice on the modern world."
+        },
+        "12": {
+            "id": 12,
+            "name": "Adventure",
+            "backdrop_path": "/tUBN1paMQ1tmVA5Sjy1ZjPWVsiF.jpg",
+            "title": "Tad the Lost Explorer and the Emerald Tablet",
+            "overview": "Tad would love for his archeologist colleagues to accept him as one of their own, but he always messes everything up."
+        },
+        "16": {
+            "id": 16,
+            "name": "Animation",
+            "backdrop_path": "/kpUre8wWSXn3D5RhrMttBZa6w1v.jpg",
+            "title": "Disenchanted",
+            "overview": "Disillusioned with life in the city, feeling out of place in suburbia, and frustrated that her happily ever after hasn't been so easy to find."
+        },
+        "35": {
+            "id": 35,
+            "name": "Comedy",
+            "backdrop_path": "/kmzppWh7ljL6K9fXW72bPN3gKwu.jpg",
+            "title": "R.I.P.D. 2: Rise of the Damned",
+            "overview": "When Sheriff Roy Pulsipher finds himself in the afterlife, he joins a special police force and returns to Earth to save humanity from the undead."
+        },
+        "80": {
+            "id": 80,
+            "name": "Crime",
+            "backdrop_path": "/au4HUSWDRadIcl9CqySlw1kJMfo.jpg",
+            "title": "Paradise City",
+            "overview": "Renegade bounty hunter Ryan Swan must carve his way through the Hawaiian crime world to wreak vengeance on the kingpin who murdered his father."
+        },
+        "99": {
+            "id": 99,
+            "name": "Documentary",
+            "backdrop_path": "/yNib9QAiyaopUJbaayKQ2xK7mYf.jpg",
+            "title": "Sniper: The White Raven",
+            "overview": "Mykola is an eccentric pacifist who wants to be useful to humanity. When the war begins at Donbass, Mykola's naive world is collapsing."
+        },
+        "18": {
+            "id": 18,
+            "name": "Drama",
+            "backdrop_path": "/gVecEIEZLZg3pV5CACXAB48I6au.jpg",
+            "title": "Emily the Criminal",
+            "overview": "Emily, who is saddled with student debt and locked out of the job market due to a minor criminal record, gets involved in a credit card scam."
+        },
+        "10751": {
+            "id": 10751,
+            "name": "Family",
+            "backdrop_path": "/707thQazLJiYLBhCrZlRoV05NNL.jpg",
+            "title": "Lost Bullet 2",
+            "overview": "Having cleared his name, genius mechanic Lino has only one goal in mind: getting revenge on the corrupt cops who killed his brother and his mentor."
+        },
+        "14": {
+            "id": 14,
+            "name": "Fantasy",
+            "backdrop_path": "/u9Io1hVnxb2b3T0z99aOK8sq0SN.jpg",
+            "title": "Enola Holmes 2",
+            "overview": "Now a detective-for-hire like her infamous brother, Enola Holmes takes on her first official case to find a missing girl."
+        },
+        "36": {
+            "id": 36,
+            "name": "History",
+            "backdrop_path": "/aQOWnw3HydsCQZ10O0wvxFOaWc3.jpg",
+            "title": "Medieval",
+            "overview": "The story of 14th century Czech icon and warlord Jan Zizka who defeated armies of the Teutonic Order and the Holy Roman Empire."
+        },
+        "27": {
+            "id": 27,
+            "name": "Horror",
+            "backdrop_path": "/olPXihyFeeNvnaD6IOBltgIV1FU.jpg",
+            "title": "Smile",
+            "overview": "After witnessing a bizarre, traumatic incident involving a patient, Dr. Rose Cotter starts experiencing frightening occurrences that she can't explain."
+        }
+    }
+}
