@@ -7,112 +7,43 @@ import Categories from '@/app/componenets/categories'
 import MoviesSection from '@/app/componenets/movies-section'
 import Link from 'next/link'
 import { FaPlus } from 'react-icons/fa'
+import styles from './styles.module.css'
 
-function HomeContainer({categories=[],popularMovies = [], topRatedMovies = [], selectedCategory = null }) {
+function HomeContainer({ categories = [], popularMovies = [], topRatedMovies = [], selectedCategory = null }) {
     return (
         <>
             {selectedCategory ? (
                 // Kategori seçildiğinde farklı görsel
-                <div style={{
-                    position: 'relative',
-                    width: '100vw',
-                    height: '140vh',
-                    marginLeft: 'calc(-50vw + 50%)',
-                    marginRight: 'calc(-50vw + 50%)',
-                    marginTop: '-80px',
-                    overflow: 'hidden'
-                }}>
+                <div className={styles.categoryHero}>
                     {/* Arka plan görseli */}
-                    <div style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        backgroundImage: `url(https://image.tmdb.org/t/p/original${CategoryBackgrounds.categoryBackgrounds[selectedCategory.id]?.backdrop_path})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center top',
-                        zIndex: -2
-                    }} />
+                    <div
+                        className={styles.categoryBackground}
+                        style={{
+                            backgroundImage: `url(https://image.tmdb.org/t/p/original${CategoryBackgrounds.categoryBackgrounds[selectedCategory.id]?.backdrop_path})`
+                        }}
+                    />
 
                     {/* Overlay */}
-                    <div style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0.1) 80%, rgba(0, 0, 0, 0) 100%)',
-                        zIndex: -1
-                    }} />
+                    <div className={styles.categoryOverlay} />
 
                     {/* İçerik */}
-                    <div style={{
-                        position: 'absolute',
-                        top: '200px',
-                        left: '60px',
-                        zIndex: 10,
-                        color: 'white'
-                    }}>
-                        <h1 style={{
-                            fontSize: '72px',
-                            textTransform: 'uppercase',
-                            letterSpacing: '-1px',
-                            fontWeight: '900',
-                            lineHeight: '72px',
-                            maxWidth: '25ch',
-                            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
-                            marginBottom: '20px'
-                        }}>
+                    <div className={styles.categoryContent}>
+                        <h1 className={styles.categoryTitle}>
                             {CategoryBackgrounds.categoryBackgrounds[selectedCategory.id]?.title || selectedCategory.name}
                         </h1>
-                        <p style={{
-                            fontSize: '24px',
-                            maxWidth: '50ch',
-                            textShadow: '1px 1px 2px rgba(0, 0, 0, 0.8)',
-                            lineHeight: '1.4',
-                            marginBottom: '30px'
-                        }}>
+                        <p className={styles.categoryDescription}>
                             {CategoryBackgrounds.categoryBackgrounds[selectedCategory.id]?.overview || `En iyi ${selectedCategory.name.toLowerCase()} filmlerini keşfedin`}
                         </p>
 
                         {/* Butonlar */}
-                        <div style={{
-                            display: 'flex',
-                            gap: '12px',
-                            alignItems: 'center'
-                        }}>
-                            <Link href={`/movie/${CategoryBackgrounds.categoryBackgrounds[selectedCategory.id]?.id || 1}`} style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                backgroundColor: '#eee',
-                                color: '#222',
-                                width: '300px',
-                                borderRadius: '9999px',
-                                fontSize: '20px',
-                                fontWeight: '700',
-                                cursor: 'pointer',
-                                transition: 'all 0.3s ease',
-                                textDecoration: 'none',
-                                padding: '15px 30px'
-                            }}>
+                        <div className={styles.categoryButtons}>
+                            <Link
+                                href={`/movie/${CategoryBackgrounds.categoryBackgrounds[selectedCategory.id]?.id || 1}`}
+                                className={styles.categoryPlayButton}
+                            >
                                 Play
                             </Link>
-                            <button style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                border: '2px solid #eee',
-                                borderRadius: '999px',
-                                width: '62px',
-                                height: '62px',
-                                color: '#eee',
-                                fontSize: '24px',
-                                background: 'transparent',
-                                cursor: 'pointer',
-                                transition: 'all 0.3s ease'
-                            }}>
+                            <button className={styles.categoryAddButton}>
                                 <FaPlus />
                             </button>
                         </div>

@@ -170,6 +170,11 @@
     }
 }
 
+.categoryPlayButton:hover {
+    background-color: #ddd;
+    transform: scale(1.05);
+}
+
 .categoryAddButton {
     display: flex;
     align-items: center;
@@ -193,4 +198,10 @@
         height: 62px;
         font-size: 24px;
     }
+}
+
+.categoryAddButton:hover {
+    background-color: #eee;
+    color: #222;
+    transform: scale(1.1);
 }
