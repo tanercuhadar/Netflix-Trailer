@@ -1,11 +1,25 @@
 .header {
     background: transparent;
-    padding: 1rem 2rem;
+    padding: 1rem;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 100;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+    .header {
+        padding: 1rem 1.5rem;
+    }
+}
+
+/* Desktop and up */
+@media (min-width: 1024px) {
+    .header {
+        padding: 1rem 2rem;
+    }
 }
 
 .headerWrapper {
@@ -20,14 +34,105 @@
     display: flex;
     align-items: center;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: bold;
     color: white;
+    z-index: 101;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+}
+
+/* Hamburger Menu Button - Mobile Only */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 101;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Hide hamburger on tablet and up */
+@media (min-width: 768px) {
+    .hamburger {
+        display: none;
+    }
 }
 
 .navigationMenu {
-    display: flex;
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 70%;
+    max-width: 300px;
+    background: rgba(0, 0, 0, 0.98);
+    flex-direction: column;
     gap: 2rem;
+    padding: 80px 2rem 2rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.navigationMenu.active {
+    display: flex;
+    transform: translateX(0);
+}
+
+/* Tablet and up - horizontal menu */
+@media (min-width: 768px) {
+    .navigationMenu {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        width: auto;
+        max-width: none;
+        background: transparent;
+        padding: 0;
+        gap: 1.5rem;
+        transform: none;
+        backdrop-filter: none;
+    }
+
+    .navigationMenu.active {
+        transform: none;
+    }
+}
+
+/* Desktop - more spacing */
+@media (min-width: 1024px) {
+    .navigationMenu {
+        gap: 2rem;
+    }
 }
 
 .navigationMenu a {
@@ -35,9 +140,46 @@
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+    .navigationMenu a {
+        font-size: 1rem;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .navigationMenu a {
+        font-size: 1.1rem;
+    }
 }
 
 .navigationMenu a:hover {
     color: #e50914;
+}
+
+/* Mobile menu overlay */
+.menuOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 99;
+}
+
+.menuOverlay.active {
+    display: block;
+}
+
+/* Hide overlay on tablet and up */
+@media (min-width: 768px) {
+    .menuOverlay {
+        display: none !important;
+    }
 }

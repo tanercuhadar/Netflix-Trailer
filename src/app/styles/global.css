@@ -1,14 +1,69 @@
+/* CSS Variables for Responsive Breakpoints */
+:root {
+    --mobile-max: 767px;
+    --tablet-min: 768px;
+    --tablet-max: 1023px;
+    --desktop-min: 1024px;
+}
+
 body {
     background-color: #000;
     font-size: 16px;
     color: white;
     margin: 0;
-    padding: 20px;
+    padding: 10px;
     font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+    body {
+        padding: 15px;
+    }
+}
+
+/* Desktop and up */
+@media (min-width: 1024px) {
+    body {
+        padding: 20px;
+    }
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+}
+
+/* Desktop and up */
+@media (min-width: 1024px) {
+    .container {
+        padding: 20px;
+    }
+}
+
+/* Responsive Typography */
+h1 {
+    font-size: clamp(2rem, 5vw, 4.5rem);
+}
+
+h2 {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+}
+
+h3 {
+    font-size: clamp(1.25rem, 3vw, 2rem);
+}
+
+p {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    line-height: 1.6;
 }

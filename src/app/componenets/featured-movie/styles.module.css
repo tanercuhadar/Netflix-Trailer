@@ -1,21 +1,42 @@
 .movieWrapper {
     position: relative;
     width: 100vw;
-    height: 140vh;
-    /* Yüksekliği artırdım */
+    height: 80vh;
     overflow: hidden;
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
-    margin-top: -80px;
+    margin-top: -60px;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .movieWrapper {
+        height: 100vh;
+        margin-top: -70px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .movieWrapper {
+        height: 140vh;
+        margin-top: -80px;
+    }
 }
 
 /* Film detay sayfası için daha büyük görsel */
 .movieWrapper:not(.compact) {
-    height: 100vh;
+    height: 90vh;
     margin-top: -30px;
-    /* Üst boşluğu kapatmak için negatif margin */
     position: relative;
     top: 0;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+    .movieWrapper:not(.compact) {
+        height: 100vh;
+    }
 }
 
 .moviePoster {
@@ -28,65 +49,164 @@
 }
 
 .movieTitle {
-    font-size: 72px;
+    font-size: 32px;
     text-transform: uppercase;
     letter-spacing: -1px;
     font-weight: 900;
-    line-height: 72px;
-    max-width: 25ch;
+    line-height: 1.1;
+    max-width: 90%;
     position: absolute;
-    top: 200px;
-    left: 60px;
+    top: 120px;
+    left: 20px;
+    right: 20px;
     z-index: 10;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
+/* Tablet */
+@media (min-width: 768px) {
+    .movieTitle {
+        font-size: 48px;
+        top: 150px;
+        left: 40px;
+        max-width: 25ch;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .movieTitle {
+        font-size: 72px;
+        line-height: 72px;
+        top: 200px;
+        left: 60px;
+    }
+}
+
 .overview {
-    font-size: 24px;
-    max-width: 50ch;
+    font-size: 14px;
+    max-width: 90%;
     position: absolute;
-    top: 380px;
-    left: 60px;
+    top: 240px;
+    left: 20px;
+    right: 20px;
     z-index: 10;
     color: white;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    line-height: 1.4;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .overview {
+        font-size: 18px;
+        top: 300px;
+        left: 40px;
+        max-width: 50ch;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .overview {
+        font-size: 24px;
+        top: 380px;
+        left: 60px;
+    }
 }
 
 .shortOverview {
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
+/* Tablet - show more lines */
+@media (min-width: 768px) {
+    .shortOverview {
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+    }
+}
+
 /* isCompact=false durumunda overview için özel stil */
 .overview:not(.shortOverview) {
-    max-width: 60ch;
+    max-width: 90%;
     line-height: 1.4;
     margin-bottom: 20px;
 }
 
+/* Tablet and up */
+@media (min-width: 768px) {
+    .overview:not(.shortOverview) {
+        max-width: 60ch;
+    }
+}
+
 .actionButtons {
     display: flex;
+    flex-direction: column;
     gap: 12px;
     position: absolute;
-    top: 480px;
-    left: 60px;
+    top: 340px;
+    left: 20px;
+    right: 20px;
     z-index: 10;
+}
+
+/* Tablet - horizontal buttons */
+@media (min-width: 768px) {
+    .actionButtons {
+        flex-direction: row;
+        top: 420px;
+        left: 40px;
+        right: auto;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .actionButtons {
+        top: 480px;
+        left: 60px;
+    }
 }
 
 /* isCompact=false durumunda butonlar için özel pozisyon */
 .movieWrapper:not(.compact) .actionButtons {
-    top: 600px;
-    /* Açıklamanın altında */
-    left: 60px;
+    top: 450px;
+    left: 20px;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+    .movieWrapper:not(.compact) .actionButtons {
+        top: 520px;
+        left: 40px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .movieWrapper:not(.compact) .actionButtons {
+        top: 600px;
+        left: 60px;
+    }
 }
 
 /* Film detay sayfasında başlık pozisyonu */
 .movieWrapper:not(.compact) .movieTitle {
-    top: 120px;
-    /* Üst boşluğu azaltmak için */
+    top: 100px;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+    .movieWrapper:not(.compact) .movieTitle {
+        top: 120px;
+    }
 }
 
 .addButton {
@@ -95,13 +215,23 @@
     justify-content: center;
     border: 2px solid #eee;
     border-radius: 999px;
-    width: 62px;
-    height: 62px;
+    width: 50px;
+    height: 50px;
     color: #eee;
-    font-size: 24px;
+    font-size: 20px;
     background: transparent;
     cursor: pointer;
     transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+    .addButton {
+        width: 62px;
+        height: 62px;
+        font-size: 24px;
+    }
 }
 
 .addButton:hover {
@@ -115,12 +245,30 @@
     justify-content: center;
     background-color: #eee;
     color: #222;
-    width: 300px;
+    width: 100%;
+    max-width: 250px;
+    height: 50px;
     border-radius: 9999px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+    .playButton {
+        width: 280px;
+        height: 56px;
+        font-size: 20px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .playButton {
+        width: 300px;
+    }
 }
 
 .playButton:hover {

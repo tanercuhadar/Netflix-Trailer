@@ -1,30 +1,91 @@
 .moviesSection {
+  margin-top: 24px;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .moviesSection {
     margin-top: 36px;
   }
-  
+}
+
+.title {
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: -1px;
+  padding: 0 10px;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
   .title {
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    font-size: 24px;
-    letter-spacing: -1px;
+    font-size: 20px;
+    padding: 0;
   }
-  
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .title {
+    font-size: 24px;
+  }
+}
+
+.movies {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 240px;
+  gap: 12px;
+  padding: 0 10px;
+}
+
+/* Small tablets */
+@media (min-width: 600px) {
   .movies {
-    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 280px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .movies {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 300px;
+    gap: 18px;
+    padding: 0;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .movies {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     grid-auto-rows: 320px;
     gap: 24px;
   }
-  
-  .movie {
-    overflow: hidden;
-    border-radius: 8px;
-    position: relative;
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease;
-  }
-  
+}
+
+.movie {
+  overflow: hidden;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+/* Reduced hover effect on mobile/touch devices */
+@media (hover: hover) {
   .movie:hover {
     z-index: 9;
     transform: scale(1.25);
   }
+}
+
+/* Touch devices - smaller scale */
+@media (hover: none) {
+  .movie:active {
+    transform: scale(1.05);
+  }
+}
